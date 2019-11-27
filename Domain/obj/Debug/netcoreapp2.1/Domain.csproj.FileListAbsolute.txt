@@ -1,0 +1,45 @@
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+C:\ProfessorDiogo\C#\EcommerceAngelo\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Users\diogo\Desktop\Nova pasta (2)\ecommerceangelo\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\diogo\Desktop\AS\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Users\diogo\Desktop\AS\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Users\diogo\Desktop\AS\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Users\diogo\Desktop\AS\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\EcommerceAngelo-master\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
