@@ -25,27 +25,7 @@ namespace SharpeAcademia.Controllers
         {
             return View(_clienteDAO.ListarTodos());
         }
-        //public IActionResult Cadastrar()
-        //{
-        //    Cliente c = new Cliente();
-        //    if (TempData["Cliente"] != null)
-        //    {
-        //        string resultado = TempData["Cliente"].ToString();
-        //        //    //Newtonsoft.Json
-        //        //    u.Endereco = JsonConvert.
-        //        //        DeserializeObject<Endereco>(resultado);
-        //        //}
-        //        return View(c);
-        //    }
-        //}
-        //[HttpPost]
-        //public IActionResult BuscarCep(Usuario u)
-        //{
-        //    string url = $"https://viacep.com.br/ws/{u.Endereco.Cep}/json/";
-        //    WebClient client = new WebClient();
-        //    TempData["Usuario"] = client.DownloadString(url);
-        //    return RedirectToAction(nameof(Cadastrar));
-        //}
+
         [HttpPost]
         public async Task<IActionResult> Cadastrar(Cliente u)
         {

@@ -11,13 +11,13 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TreinoAPIController : ControllerBase
+    public class ExercicioAPIController : ControllerBase
     {
-        public readonly TreinoDAO _treinoDAO;
+        public readonly ExercicioDAO _exercicioDAO;
 
-        public TreinoAPIController (TreinoDAO treinoDAO)
+        public ExercicioAPIController(ExercicioDAO exercicioDAO)
         {
-            _treinoDAO = treinoDAO;
+            _exercicioDAO = exercicioDAO;
         }
 
         //GET: /api/Treino/ListarTodos
@@ -25,27 +25,27 @@ namespace API.Controllers
         [Route("ListarTodos")]
         public IActionResult ListarTodos()
         {
-            return Ok(_treinoDAO.ListarTodos());
+            return Ok(_exercicioDAO.ListarTodos());
         }
         //GET:
         [HttpGet]
         [Route("BuscarPorId/{id}")]///{} parametros
         public IActionResult BuscarPorId([FromRoute]int id)
         {
-            Treino t = _treinoDAO.BuscarPorId(id);
-            if (t != null)
+            Exercicios e = _exercicioDAO.BuscarPorId(id);
+            if (e != null)
             {
-                return Ok(t);
+                return Ok(e);
             }
             return NotFound(new { msg = "Não encontrado" });
         }
 
         [HttpGet]
         [Route("Cadastrar")]
-        public IActionResult Cadastrar([FromBody] Treino treino)
+        public IActionResult Cadastrar([FromBody] Exercicios exercicios)
         {
-            _treinoDAO.Cadastrar(treino);
-            return Created("", treino);
+            _exercicioDAO.Cadastrar(exercicios);
+            return Created("", exercicios);
         }
     }
 }
