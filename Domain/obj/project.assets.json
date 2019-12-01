@@ -4062,11 +4062,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Mahrselha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

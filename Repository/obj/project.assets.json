@@ -4363,11 +4363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\Mahrselha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Repository\\obj\\",
+      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4386,8 +4386,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj"
+            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj"
             }
           }
         }

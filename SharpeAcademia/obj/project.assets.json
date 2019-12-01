@@ -12581,11 +12581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\SharpeAcademia\\SharpeAcademia.csproj",
+      "projectUniqueName": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\SharpeAcademia\\SharpeAcademia.csproj",
       "projectName": "SharpeAcademia",
-      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\SharpeAcademia\\SharpeAcademia.csproj",
+      "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\SharpeAcademia\\SharpeAcademia.csproj",
       "packagesPath": "C:\\Users\\Mahrselha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\SharpeAcademia\\obj\\",
+      "outputPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\SharpeAcademia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12604,11 +12604,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Domain\\Domain.csproj"
+            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\ProjetoDotNetCore\\Repository\\Repository.csproj"
+            "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Mahrselha\\Documents\\Marselha\\UP\\C Sharp\\SharpeAcademia\\Repository\\Repository.csproj"
             }
           }
         }

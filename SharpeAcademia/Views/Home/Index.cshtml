@@ -1,5 +1,16 @@
 ﻿@*@model List<Exercicios>*@
 <div>
-    <h1> Eae gelr</h1>
+    <div>
+        <h1> Bem vindo a Sharpe Academia</h1>
+        <h2>O que gostaria de fazer hoje?</h2>
+        
+        
+        @Html.ActionLink("Cadastro Aluno Novo", "Index", "Cliente", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Cadastro Professor", "Index", "Professor", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Solicitação de treino", "Index", "SolicitacaoTreino", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Consulta Treino", "Index", "Treino", null, new { @class = "btn btn-primary" })
+        
+        
+    </div>
     
 </div>
