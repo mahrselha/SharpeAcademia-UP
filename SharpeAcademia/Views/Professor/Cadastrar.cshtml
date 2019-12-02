@@ -1,0 +1,40 @@
+﻿@model Professor
+
+<form method="post">
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="form-group" id="Nome">
+            <label asp-for="Nome"></label>
+            <input type="text" class="form-control"
+                   asp-for="Nome" />
+            <span asp-validation-for="Nome"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Endereco">
+            <label asp-for="Endereco"></label>
+            <input type="text" class="form-control"
+                   asp-for="Endereco" />
+            <span asp-validation-for="Endereco"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Cpf">
+            <label asp-for="Cpf"></label>
+            <input type="text" class="form-control"
+                   asp-for="Cpf" />
+            <span asp-validation-for="Cpf"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Email">
+            <label asp-for="Email"></label>
+            <input type="email" class="form-control"
+                   asp-for="Email" />
+            <span asp-validation-for="Email"
+                  class="text-primary"></span>
+        </div>
+        <input type="submit"
+               class="btn btn-success"
+               value="Cadastrar"
+               asp-action="Cadastrar"
+               asp-controller="api/Professor" />
+    </fieldset>
+</form>

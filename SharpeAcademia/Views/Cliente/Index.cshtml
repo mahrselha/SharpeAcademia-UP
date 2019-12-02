@@ -1,0 +1,46 @@
+﻿@model List<Cliente>
+    <div>
+        <h2>Gerenciamento de Clientes</h2>
+        <a class="btn btn-info" asp-action="Cadastrar">Cadastrar cliente</a>
+
+        <table style="margin-bottom:15px;margin-top:15px"
+               class="table table-hover table-striped">
+            <thead>
+                <tr class="table-active">
+                    <th>Nome</th>
+                    <th>Data de nascimento</th>
+                    <th>Endereco</th>
+                    <th>Cpf</th>
+                    <th>Email</th>
+                    <th>Remover</th>
+                    <th>Alterar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Cliente cliente in Model) {
+                    <tr>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.Nascimento</td>
+                        <td>@cliente.Endereco</td>
+                        <td>@cliente.Cpf</td>
+                        <td>@cliente.Email</td>
+                        <td>
+                            <a asp-action="Remover"
+                               asp-route-id="@cliente.ClienteId"
+                               class="btn btn-primary">
+                                Remover
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="Alterar"
+                               asp-route-id="@cliente.ClienteId"
+                               class="btn btn-danger">
+                                Alterar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>

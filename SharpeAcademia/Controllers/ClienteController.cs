@@ -26,6 +26,11 @@ namespace SharpeAcademia.Controllers
             return View(_clienteDAO.ListarTodos());
         }
 
+                public IActionResult Cadastrar()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Cadastrar(Cliente u)
         {
@@ -66,6 +71,22 @@ namespace SharpeAcademia.Controllers
             {
                 ModelState.AddModelError("", erro.Description);
             }
+        }
+
+        public IActionResult Remover(int id) {
+            _clienteDAO.Remover(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Alterar(int id) {
+            return View
+                (_clienteDAO.BuscarPorId(id));
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(Cliente cliente) {
+            _clienteDAO.Alterar(cliente);
+            return RedirectToAction("Index");
         }
 
         //public async Task<IActionResult> Logout()
