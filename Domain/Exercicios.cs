@@ -10,6 +10,7 @@ namespace Domain
     public class Exercicios
     {
         [Key]
+        
         public int ExercicioId { get; set; }
         public string NomeExercicio { get; set; }
         public string Categoria { get; set; }

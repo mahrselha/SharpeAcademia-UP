@@ -11,10 +11,11 @@ namespace Domain{
         [Key]
         public int TreinoId { get; set; }
         public string Nome { get; set; }
-        public string Descricao { get; set; }
+        //public string Descricao { get; set; }
         public List<Exercicios> NomeExercicio { get; set; } 
         public Cliente Cliente { get; set; }
         public Professor Professor { get; set; }
-        public object Categoria { get; set; }
+        //public double Imc { get; set; }
+       
     } 
 }

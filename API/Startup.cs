@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Repository;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace API
@@ -27,12 +27,9 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<TreinoDAO>();
-            services.AddScoped<ExercicioDAO>();
-
-            services.AddDbContext<Context>
-                (options => options.UseSqlServer
-                (Configuration.GetConnectionString("AcademiaConnection")));
+            //services.AddDbContext<Context>
+            //    (options => options.UseSqlServer
+            //    (Configuration.GetConnectionString("AcademiaConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -45,7 +42,13 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            
+                app.UseMvc(routes =>
+                {
+                    routes.MapRoute(
+                        name: "default",
+                        template: "{controller=ExercicioAPI}/{action=Listar}");
+                });
         }
     }
 }

@@ -21,11 +21,6 @@ namespace Repository
         {
             return _context.Exercicio.ToList();
         }
-
-        public void Cadastrar(Exercicios exercicio)
-        {
-           
-        }
-
+        
     }
 }

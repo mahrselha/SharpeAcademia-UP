@@ -17,7 +17,7 @@ namespace Repository
             return _context.Treinos.Find(id);
         }
         public List<Treino> ListarTodos() {
-            return _context.Treinos.Include(x=>x.Categoria).ToList();
+            return _context.Treinos.Include(x=>x.NomeExercicio).ToList();
         }
         public bool Cadastrar(Treino treino) {
             if (BuscarPorNome(treino) == null) {

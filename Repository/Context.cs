@@ -15,7 +15,6 @@ namespace Repository {
         public DbSet<Professor> Professores { get; set; }
         public DbSet<Treino> Treinos { get; set; }        
         public DbSet<Exercicios> Exercicio { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }

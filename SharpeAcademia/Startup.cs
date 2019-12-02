@@ -39,7 +39,6 @@ namespace SharpeAcademia
             services.AddScoped<ClienteDAO>();
             services.AddScoped<ProfessorDAO>();
             services.AddScoped<TreinoDAO>();
-            services.AddScoped<CategoriaDAO>();
             services.AddScoped<ExercicioDAO>();
             services.AddScoped<UtilsSession>();
             services.AddHttpContextAccessor();
@@ -56,11 +55,11 @@ namespace SharpeAcademia
             services.AddIdentity<UsuarioLogado, IdentityRole>().
                 AddEntityFrameworkStores<Context>().
                 AddDefaultTokenProviders();
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.LoginPath = "/Usuario/Login";
-                options.AccessDeniedPath = "/Usuario/AcessoNegado";
-            });
+            //services.ConfigureApplicationCookie(options =>
+            //{
+            //    options.LoginPath = "/Usuario/Login";
+            //    options.AccessDeniedPath = "/Usuario/AcessoNegado";
+            //});
 
 
 

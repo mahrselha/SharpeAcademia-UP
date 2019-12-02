@@ -30,3 +30,5 @@ C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\o
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\obj\Debug\netcoreapp2.1\SharpeAcademia.pdb
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\obj\Debug\netcoreapp2.1\Razor\Views\SolicitacaoTreino\Index.g.cshtml.cs
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Treino\Index.g.cshtml.cs
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\SharpeAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Treino\Cadastrar.g.cshtml.cs
