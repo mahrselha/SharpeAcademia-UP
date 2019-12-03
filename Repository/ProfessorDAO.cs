@@ -30,6 +30,14 @@ namespace Repository
             return _context.Professores.FirstOrDefault
                 (x => x.Cpf.Equals(Professor.Cpf));
         }
+        public void Remover(int id) {
+            _context.Professores.Remove(BuscarPorId(id));
+            _context.SaveChanges();
+        }
+        public void Alterar(Professor p) {
+            _context.Professores.Update(p);
+            _context.SaveChanges();
+        }
 
     }
 }

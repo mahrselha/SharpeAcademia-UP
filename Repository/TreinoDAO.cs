@@ -20,17 +20,13 @@ namespace Repository
             return _context.Treinos.Include(x=>x.NomeExercicio).ToList();
         }
         public bool Cadastrar(Treino treino) {
-            if (BuscarPorNome(treino) == null) {
+            
                 _context.Treinos.Add(treino);
                 _context.SaveChanges();
                 return true;
-            }
-            return false;
-        }
-        public Treino BuscarPorNome(Treino treino) {
-            return _context.Treinos.FirstOrDefault
-                (x => x.Nome.Equals(treino.Nome));
+            
         }
 
+        
     }
 }

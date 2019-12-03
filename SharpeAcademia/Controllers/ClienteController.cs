@@ -26,7 +26,7 @@ namespace SharpeAcademia.Controllers
             return View(_clienteDAO.ListarTodos());
         }
 
-                public IActionResult Cadastrar()
+        public IActionResult Cadastrar()
         {
             return View();
         }
@@ -89,28 +89,6 @@ namespace SharpeAcademia.Controllers
             return RedirectToAction("Index");
         }
 
-        //public async Task<IActionResult> Logout()
-        //{
-        //    await _signInManager.SignOutAsync();
-        //    return RedirectToAction("Index", "Home");
-        //}
-
-        //public IActionResult Login()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Login(Cliente u)
-        //{
-        //    var result = await _signInManager.PasswordSignInAsync
-        //        (u.Email, u.Senha, true, lockoutOnFailure: false);
-        //    if (result.Succeeded)
-        //    {
-        //        return RedirectToAction("Index", "Treino");
-        //    }
-        //    ModelState.AddModelError("", "Falha no login!");
-        //    return View(u);
-        //}
+        
     }
 }

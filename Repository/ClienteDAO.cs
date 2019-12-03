@@ -29,6 +29,14 @@ namespace Repository {
             return _context.Clientes.FirstOrDefault
                 (x => x.Cpf.Equals(cliente.Cpf));
         }
+        public void Remover(int id) {
+            _context.Clientes.Remove(BuscarPorId(id));
+            _context.SaveChanges();
+        }
+        public void Alterar(Cliente p) {
+            _context.Clientes.Update(p);
+            _context.SaveChanges();
+        }
 
     }
 }
