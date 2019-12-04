@@ -25,6 +25,8 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<double>("Altura");
+
                     b.Property<string>("Cpf")
                         .IsRequired();
 
@@ -32,10 +34,14 @@ namespace Repository.Migrations
 
                     b.Property<string>("Endereco");
 
+                    b.Property<double>("Imc");
+
                     b.Property<DateTime>("Nascimento");
 
                     b.Property<string>("Nome")
                         .IsRequired();
+
+                    b.Property<double>("Peso");
 
                     b.Property<string>("Senha");
 
@@ -97,10 +103,6 @@ namespace Repository.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("ClienteId");
-
-                    b.Property<string>("Descricao");
-
-                    b.Property<string>("Nome");
 
                     b.Property<int?>("ProfessorId");
 

@@ -19,6 +19,9 @@ namespace Domain {
         [Display(Name = "CPF:")]
         [Required(ErrorMessage = "Campo obrigatório!")]
         public string Cpf { get; set; }
+        public double Peso { get; set; }
+        public double Altura { get; set; }
+        public double Imc { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Telefone { get; set; }

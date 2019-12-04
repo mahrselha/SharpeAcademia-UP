@@ -15,12 +15,11 @@ using Repository;
 
 namespace SharpeAcademia.Controllers
 {
-    [Authorize]
-    //[Authorize(Roles = "ADM")]
+    
     public class TreinoController : Controller
     {
 
-        public static List<Exercicios> Exercicios = new List<Exercicios>();
+        public static List<Exercicios> listExercicios = new List<Exercicios>();
         private readonly ClienteDAO _clienteDAO;
         private readonly ProfessorDAO _professorDAO;
         private readonly TreinoDAO _treinoDAO;
@@ -38,14 +37,19 @@ namespace SharpeAcademia.Controllers
             _exercicioDAO = exercicioDAO;
             //_hosting = hosting;
         }
-
-        [HttpPost]
-        public IActionResult Cadastrar(Cliente c, Professor p)
+        public IActionResult Cadastrar()
         {
-            Treino treino = new Treino();
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Cadastrar(Treino t)
+        {
+            ListaExercicio();
+
+            t.NomeExercicio = listExercicios;
 
             ViewBag.Exercicios =
-                new SelectList(_exercicioDAO.ListarTodos(),
+                new SelectList(listExercicios,
                 "ExercicioId", "Nome", "Categoria");
 
             ViewBag.Professor =
@@ -56,7 +60,7 @@ namespace SharpeAcademia.Controllers
                 new SelectList(_clienteDAO.ListarTodos(),
                 "ClienteID", "Nome");
 
-            _treinoDAO.Cadastrar(treino);
+            _treinoDAO.Cadastrar(t);
 
             return View();
         }
@@ -69,13 +73,12 @@ namespace SharpeAcademia.Controllers
 
         public void ListaExercicio()
         {
-            List<Exercicios> exercicio = new List<Exercicios>();
-
+            
             using (var client = new WebClient())
             {
                 String json = client.DownloadString("http://localhost:61822/api/ExercicioAPI/Listar");
 
-                exercicio = JsonConvert.DeserializeObject<List<Exercicios>>(json);
+                listExercicios = JsonConvert.DeserializeObject<List<Exercicios>>(json);
 
             }
 

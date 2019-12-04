@@ -19,10 +19,9 @@ namespace SharpeAcademia.Controllers
         public IActionResult Index()
         {
             List<Professor> professores = new List<Professor>();
-            using (var client = new WebClient()) {
-                string json = client.DownloadString("http://localhost:61822/api/Professor/ListarTodos");
-                professores = JsonConvert.DeserializeObject<List<Professor>>(json);
-            }
+            WebClient client = new WebClient();
+            string json = client.DownloadString("http://localhost:61822/api/Professor/ListarTodos");
+            professores = JsonConvert.DeserializeObject<List<Professor>>(json);
             return View(professores);
         }
 

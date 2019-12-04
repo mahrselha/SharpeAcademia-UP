@@ -24,6 +24,16 @@
             <span asp-validation-for="Cpf"
                   class="text-primary"></span>
         </div>
+        <div class="form-group" id="Peso">
+            <label asp-for="Peso"></label>
+            <input type="number" class="form-control"
+                   asp-for="Peso" />
+        </div>
+        <div class="form-group" id="Altura">
+            <label asp-for="Altura"></label>
+            <input type="number" step="0.22" class="form-control"
+                   asp-for="Altura" />
+        </div>
         <div class="form-group" id="Email">
             <label asp-for="Email"></label>
             <input type="email" class="form-control"
@@ -38,6 +48,7 @@
             <span asp-validation-for="Senha"
                   class="text-primary"></span>
         </div>
+
         <input type="submit"
                class="btn btn-success"
                value="Cadastrar"

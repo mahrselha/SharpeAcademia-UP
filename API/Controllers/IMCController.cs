@@ -28,8 +28,8 @@ namespace API.Controllers
                 stg = "0";
             }
 
-            string json = "{ imc: " + double.Parse(stg).ToString("0.00") + "}";
-
+            //string json = "{ imc: " + double.Parse(stg).ToString("0.00") + "}";
+            string json = "{ imc: " + double.Parse("2.45").ToString("0.00") + "}";
             return json;
         }
     }

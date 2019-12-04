@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
+using System.Linq;
 
 namespace SharpeAcademia.Controllers
 {
@@ -30,7 +32,7 @@ namespace SharpeAcademia.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> Cadastrar(Cliente u)
         {
@@ -54,7 +56,7 @@ namespace SharpeAcademia.Controllers
                     //Autenticação do usuário
                     await _signInManager.
                         SignInAsync(uLogado, isPersistent: false);
-
+                    u.Imc = getImc(u.Peso, u.Altura);
                     if (_clienteDAO.Cadastrar(u))
                     {
                         return RedirectToAction("Index");
@@ -89,6 +91,24 @@ namespace SharpeAcademia.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public double getImc(double peso, double altura)
+        {
         
+            double imc = 0;
+            using (var client = new WebClient())
+            {
+                double teste = 1.59;
+                string url = "http://localhost:61822/api/IMC?peso=" + 59 + "&altura=" + teste;
+                string json = client.DownloadString(url);
+
+                imc = Convert.ToDouble(new string(json.Where(char.IsDigit).ToArray()));
+
+            }
+            return imc;
+        }
     }
+
+        
+    
 }

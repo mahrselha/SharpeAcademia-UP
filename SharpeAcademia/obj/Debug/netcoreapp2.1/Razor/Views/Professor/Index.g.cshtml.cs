@@ -59,7 +59,7 @@ using Domain;
             WriteLiteral("    <div>\r\n        <h2>Gerenciamento de Clientes</h2>\r\n        ");
             EndContext();
             BeginContext(86, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bafdb6b40750440e98b01ffc362aa6f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dc0613871044cb4b26723d26dd3b750", async() => {
                 BeginContext(133, 19, true);
                 WriteLiteral("Cadastrar professor");
                 EndContext();
@@ -156,7 +156,7 @@ using Domain;
             WriteLiteral("</td>\r\n                        <td>\r\n                            ");
             EndContext();
             BeginContext(1082, 225, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a69bdda6de4822a7ae6a4e61134ba5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bac6f3b3be5c4cf8846b1a1ad9dc1a55", async() => {
                 BeginContext(1232, 71, true);
                 WriteLiteral("\r\n                                Remover\r\n                            ");
                 EndContext();
@@ -192,7 +192,7 @@ using Domain;
             WriteLiteral("\r\n                        </td>\r\n                        <td>\r\n                            ");
             EndContext();
             BeginContext(1398, 224, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a382db75c39b4e1887ec8946fbe1a201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b96b59f1a0eb429d83d8e5e482f32707", async() => {
                 BeginContext(1547, 71, true);
                 WriteLiteral("\r\n                                Alterar\r\n                            ");
                 EndContext();
