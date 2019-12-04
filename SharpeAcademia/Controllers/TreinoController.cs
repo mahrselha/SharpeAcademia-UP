@@ -15,7 +15,7 @@ using Repository;
 
 namespace SharpeAcademia.Controllers
 {
-    
+
     public class TreinoController : Controller
     {
 
@@ -39,26 +39,25 @@ namespace SharpeAcademia.Controllers
         }
         public IActionResult Cadastrar()
         {
+            ListaExercicio();
+            ViewBag.Exercicios =
+                   new SelectList(listExercicios,
+                   "ExercicioId", "Nome", "Categoria");
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Cadastrar(Treino t)
         {
-            ListaExercicio();
 
-            t.NomeExercicio = listExercicios;
+            //t.NomeExercicio = listExercicios;
 
             ViewBag.Exercicios =
-                new SelectList(listExercicios,
-                "ExercicioId", "Nome", "Categoria");
+                    new SelectList(listExercicios,
+                    "ExercicioId", "Nome", "Categoria");
 
-            ViewBag.Professor =
-                new SelectList(_professorDAO.ListarTodos(),
-                "ProfessorId", "Nome");
-
-            ViewBag.Cliente =
-                new SelectList(_clienteDAO.ListarTodos(),
-                "ClienteID", "Nome");
+            //ViewBag.Cliente =
+            //    new SelectList(_clienteDAO.ListarTodos(),
+            //    "ClienteID", "Nome");
 
             _treinoDAO.Cadastrar(t);
 
@@ -73,16 +72,50 @@ namespace SharpeAcademia.Controllers
 
         public void ListaExercicio()
         {
-            
+            Exercicios e = new Exercicios();
+
             using (var client = new WebClient())
             {
                 String json = client.DownloadString("http://localhost:61822/api/ExercicioAPI/Listar");
 
                 listExercicios = JsonConvert.DeserializeObject<List<Exercicios>>(json);
 
+                //ViewBag.Professor =
+                //    new SelectList(_professorDAO.ListarTodos(),
+                //    "ProfessorId", "Nome");
+            }
+
+
+
+        }
+
+        public void ListaBanco()
+        {
+            List<Exercicios> obj = new List<Exercicios>();
+            obj.AddRange(_exercicioDAO.ListarTodos());
+            if (obj.Count > 0)
+            {
+                foreach (var itemApi in listExercicios)
+                {
+                    if (!obj.Exists(x => x.NomeExercicio.Equals(itemApi.NomeExercicio)))
+                    {
+                        _exercicioDAO.Cadastrar(itemApi);
+                    }
+
+                }
+            }
+            else
+            {
+                foreach (var item in listExercicios)
+                {
+                    _exercicioDAO.Cadastrar(item);
+                }
+
             }
 
         }
+
+
 
     }
 }
