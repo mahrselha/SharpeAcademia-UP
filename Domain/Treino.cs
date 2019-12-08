@@ -13,6 +13,8 @@ namespace Domain{
         public List<Exercicios> NomeExercicio { get; set; } 
         public Cliente Cliente { get; set; }
         public Professor Professor { get; set; }
-       
+        [NotMapped]
+        public bool CheckBox { get; set; }
+
     } 
 }

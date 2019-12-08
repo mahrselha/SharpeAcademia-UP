@@ -17,16 +17,26 @@ namespace Repository
             return _context.Treinos.Find(id);
         }
         public List<Treino> ListarTodos() {
-            return _context.Treinos.Include(x=>x.NomeExercicio).ToList();
+            return _context.Treinos.ToList();
         }
         public bool Cadastrar(Treino treino) {
             
                 _context.Treinos.Add(treino);
                 _context.SaveChanges();
                 return true;
-            
         }
 
-        
+        public void Remover(int id)
+        {
+            _context.Treinos.Remove(BuscarPorId(id));
+            _context.SaveChanges();
+        }
+        public void Alterar(Treino p)
+        {
+            _context.Treinos.Update(p);
+            _context.SaveChanges();
+        }
+
+
     }
 }

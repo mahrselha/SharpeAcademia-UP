@@ -1,33 +1,57 @@
 ﻿@model Domain.Treino
 
-@{ 
-    var teste = ViewBag.Exercicios;
-}
+
 <form method="post">
     <fieldset>
         <legend>Treino</legend>
+        <div>
 
-        @teste
-            <div class="form-group" id="ExercicioNome">
-                <select asp-for="NomeExercicio"
-                     asp-items="@ViewBag.Exercicio"></select>
+            <div class="form-group" id="Cliente" >
+                <label>Cliente</label>
+                <select asp-items="@ViewBag.Cliente"
+                        class="form-control"
+                        name="drpCliente">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+            <div class="form-group" id="Professor">
+                <label>Professor</label>
+                <select asp-items="@ViewBag.Professor"
+                        class="form-control"
+                        name="drpProfessor">
+                    <option> -- SELECIONE -- </option>
+                </select>
             </div>
 
-        <div class="form-group" id="ProfessorNome">
-            <select asp-for="Professor.Nome"
-                    asp-items="@ViewBag.Professor"></select>
+
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Selecionar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Exercicios item in ViewBag.Exercicios)
+                    {
+                        <tr>
+                            <td>@item.NomeExercicio</td>
+                            <td>@item.Categoria</td>
+                            <td><input type="checkbox">@item.Ckb</td>
+                        </tr>                    
+                    }
+                    
+                </tbody>
+            </table>
         </div>
 
-        <div class="form-group" id="ClienteNome">
-            <select asp-for="Cliente.Nome"
-                    asp-items="@ViewBag.Cliente"></select>
-        </div>
 
-
-        <input type="submit"
-               class="btn btn-success"
-               value="Cadastrar"
-               asp-action="Cadastrar"
-               asp-controller="Treino" />
-    </fieldset>
+            <input type="submit"
+                   class="btn btn-success"
+                   value="Cadastrar"
+                   asp-action="Cadastrar"
+                   asp-controller="Treino" />
+        </fieldset>
 </form>

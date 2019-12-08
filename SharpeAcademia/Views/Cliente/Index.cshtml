@@ -1,4 +1,5 @@
 ﻿@model List<Cliente>
+
     <div>
         <h2>Gerenciamento de Clientes</h2>
         <a class="btn btn-info" asp-action="Cadastrar">Cadastrar cliente</a>
@@ -12,6 +13,9 @@
                     <th>Endereco</th>
                     <th>Cpf</th>
                     <th>Email</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
                     <th>Remover</th>
                     <th>Alterar</th>
                 </tr>
@@ -24,6 +28,9 @@
                         <td>@cliente.Endereco</td>
                         <td>@cliente.Cpf</td>
                         <td>@cliente.Email</td>
+                        <td>@cliente.Peso</td>
+                        <td>@cliente.Altura</td>
+                        <td>@cliente.Imc</td>
                         <td>
                             <a asp-action="Remover"
                                asp-route-id="@cliente.ClienteId"

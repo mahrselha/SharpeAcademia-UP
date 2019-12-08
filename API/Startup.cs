@@ -10,8 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-//using Repository;
 using Microsoft.EntityFrameworkCore;
+using Repository;
 
 namespace API
 {
@@ -29,11 +29,11 @@ namespace API
         {
             //services.AddScoped<TreinoDAO>();
             //services.AddScoped<ExercicioDAO>();
-            //services.AddScoped<ProfessorDAO>();
+            services.AddScoped<ProfessorDAO>();
 
-            //services.AddDbContext<Context>
-            //    (options => options.UseSqlServer
-            //    (Configuration.GetConnectionString("AcademiaConnection")));
+            services.AddDbContext<Context>
+                (options => options.UseSqlServer
+                (Configuration.GetConnectionString("AcademiaConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

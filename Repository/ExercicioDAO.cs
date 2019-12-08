@@ -17,10 +17,23 @@ namespace Repository
         {
             return _context.Exercicio.Find(id);
         }
+
         public List<Exercicios> ListarTodos()
         {
             return _context.Exercicio.ToList();
         }
-        
+
+        public bool Cadastrar(Exercicios exercicios)
+        {
+
+            _context.Exercicio.Add(exercicios);
+            _context.SaveChanges();
+            return true;
+
+        }
+
+
+
+
     }
 }

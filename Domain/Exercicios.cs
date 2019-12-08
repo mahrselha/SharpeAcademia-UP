@@ -14,6 +14,8 @@ namespace Domain
         public int ExercicioId { get; set; }
         public string NomeExercicio { get; set; }
         public string Categoria { get; set; }
+        [NotMapped]
+        public bool Ckb { get; set; }
 
 
     }

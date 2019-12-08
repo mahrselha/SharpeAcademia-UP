@@ -15,3 +15,5 @@ C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\obj\Debug\ne
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\bin\Debug\netcoreapp2.1\API.pdb
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\obj\Debug\netcoreapp2.1\API.dll
 C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\obj\Debug\netcoreapp2.1\API.pdb
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\Mahrselha\Documents\Marselha\UP\C Sharp\SharpeAcademia\API\bin\Debug\netcoreapp2.1\Repository.pdb

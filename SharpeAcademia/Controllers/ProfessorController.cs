@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 
 namespace SharpeAcademia.Controllers
 {
     public class ProfessorController : Controller
     {
+        public static List<Professor> listProfessor = new List<Professor>();
         private readonly ProfessorDAO _professorDAO; 
         public ProfessorController(ProfessorDAO professorDAO)
         {
@@ -52,71 +54,47 @@ namespace SharpeAcademia.Controllers
             _professorDAO.Alterar(professor);
             return RedirectToAction("Index");
         }
-        /*
-        [HttpPost]
-        public async Task<IActionResult> Cadastrar(Cliente u)
-        {
-            if (ModelState.IsValid)
-            {
-                //Obrigatoriamente o email e o username devem ser
-                //preenchidos
-                UsuarioLogado uLogado = new UsuarioLogado
-                {
-                    UserName = u.Email,
-                    Email = u.Email
-                };
-                //Cadastrar o usuário na tabela do Identity
-                IdentityResult result =
-                    await _userManager.CreateAsync(uLogado, u.Senha);
-                if (result.Succeeded)
-                {
-                    //Token de confirmação do email
-                    string token = await
-                        _userManager.GenerateEmailConfirmationTokenAsync(uLogado);
-                    //Autenticação do usuário
-                    await _signInManager.
-                        SignInAsync(uLogado, isPersistent: false);
 
-                    if (_clienteDAO.Cadastrar(u))
+        public void ListaProfessor()
+        {
+            Professor p = new Professor();
+
+            using (var client = new WebClient())
+            {
+                String json = client.DownloadString("http://localhost:61822/api/ProfessorAPI/Listar");
+
+                listProfessor = JsonConvert.DeserializeObject<List<Professor>>(json);
+            }
+
+        }
+
+        public void ListaBanco()
+        {
+            List<Professor> obj = new List<Professor>();
+            obj.AddRange(_professorDAO.ListarTodos());
+
+            if (obj.Count > 0)
+            {
+                foreach (var itemApi in listProfessor)
+                {
+
+                    if (!obj.Exists(x => x.Cpf.Equals(itemApi.Cpf)))
                     {
-                        return RedirectToAction("Index");
+                        _professorDAO.Cadastrar(itemApi);
                     }
-                    ModelState.AddModelError("", "Esse e-mail já está sendo usado!");
+
                 }
-                AdicionarErros(result);
             }
-            return View(u);
-        }
-        private void AdicionarErros(IdentityResult result)
-        {
-            foreach (var erro in result.Errors)
+            else
             {
-                ModelState.AddModelError("", erro.Description);
+                foreach (var item in listProfessor)
+                {
+                    _professorDAO.Cadastrar(item);
+                }
+
             }
+
         }
 
-        //public async Task<IActionResult> Logout()
-        //{
-        //    await _signInManager.SignOutAsync();
-        //    return RedirectToAction("Index", "Home");
-        //}
-
-        //public IActionResult Login()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Login(Cliente u)
-        //{
-        //    var result = await _signInManager.PasswordSignInAsync
-        //        (u.Email, u.Senha, true, lockoutOnFailure: false);
-        //    if (result.Succeeded)
-        //    {
-        //        return RedirectToAction("Index", "Treino");
-        //    }
-        //    ModelState.AddModelError("", "Falha no login!");
-        //    return View(u);
-        //}*/
     }
 }

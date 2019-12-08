@@ -1,9 +1,48 @@
-﻿@model Domain.Treino
+﻿@model List<Treino>
 
 <h2>Index</h2>
 
-<h4>Treino</h4>
+<h4>Treinos Cadastrados</h4>
 @Html.ActionLink("Cadastro Treino", "Cadastrar", "Treino", null, new { @class = "btn btn-primary" })
 
 
+<div>
+    <table style="margin-bottom:15px;margin-top:15px"
+           class="table table-hover table-striped">
+        <thead>
+            <tr class="table-active">
+                <th>Nome Cliente</th>
+                <th>Professor</th>
+                <th>Exercicio</th>
+                <th>Remover</th>
+                <th>Alterar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Treino treino in Model)
+            {
+                <tr>
+                    <td>@treino.Cliente.Nome</td>
+                    <td>@treino.Professor.Nome</td>
+                    <td>@treino.NomeExercicio</td>
+                    <td>
+                        <a asp-action="Remover"
+                           asp-route-id="@treino.TreinoId"
+                           class="btn btn-danger">
+                            Remover
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Alterar"
+                           asp-route-id="@treino.TreinoId"
+                           class="btn btn-warning">
+                            Alterar
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
 

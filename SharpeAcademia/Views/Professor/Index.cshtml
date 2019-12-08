@@ -1,6 +1,6 @@
 ﻿@model List<Professor>
     <div>
-        <h2>Gerenciamento de Clientes</h2>
+        <h2>Gerenciamento de Professores</h2>
         <a class="btn btn-info" asp-action="Cadastrar">Cadastrar professor</a>
 
         <table style="margin-bottom:15px;margin-top:15px"
@@ -12,6 +12,7 @@
                     <th>Endereco</th>
                     <th>Cpf</th>
                     <th>Email</th>
+                    <th>Especialidade</th>
                     <th>Remover</th>
                     <th>Alterar</th>
                 </tr>
@@ -24,6 +25,7 @@
                         <td>@professor.Endereco</td>
                         <td>@professor.Cpf</td>
                         <td>@professor.Email</td>
+                        <td>@professor.Especializacao</td>
                         <td>
                             <a asp-action="Remover"
                                asp-route-id="@professor.ProfessorId"

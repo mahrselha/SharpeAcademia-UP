@@ -40,26 +40,35 @@ namespace SharpeAcademia.Controllers
         public IActionResult Cadastrar()
         {
             ListaExercicio();
-            ViewBag.Exercicios =
-                   new SelectList(listExercicios,
-                   "ExercicioId", "Nome", "Categoria");
+            ListaBanco();
+                       
+            ViewBag.Exercicios = _exercicioDAO.ListarTodos();
+            ViewBag.Cliente = new SelectList(_clienteDAO.ListarTodos(), "ClienteId", "Nome");
+            ViewBag.Professor = new SelectList(_professorDAO.ListarTodos(), "ProfessorId", "Nome");
+
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Cadastrar(Treino t)
+        public async Task<IActionResult> Cadastrar(Treino t, int drpCliente, 
+            int drpProfessor)
         {
+            Treino treino = new Treino();
 
-            //t.NomeExercicio = listExercicios;
+            List<Exercicios> listatreino = new List<Exercicios>();
 
-            ViewBag.Exercicios =
-                    new SelectList(listExercicios,
-                    "ExercicioId", "Nome", "Categoria");
+            foreach (Exercicios item in ViewBag.Exercicios)
+            {
+                if (item.Ckb == true)
+                {
+                    listatreino.Add(item);
+                }
+            }
+            treino.Professor = t.Professor;
+            treino.Cliente = t.Cliente;
+            treino.NomeExercicio = listatreino;
 
-            //ViewBag.Cliente =
-            //    new SelectList(_clienteDAO.ListarTodos(),
-            //    "ClienteID", "Nome");
-
-            _treinoDAO.Cadastrar(t);
+            _treinoDAO.Cadastrar(treino);
+                      
 
             return View();
         }
@@ -67,7 +76,12 @@ namespace SharpeAcademia.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if(_treinoDAO.ListarTodos() != null)
+            {
+                return View(_treinoDAO.ListarTodos());
+            }
+            return View(new List<Treino>());
+
         }
 
         public void ListaExercicio()
@@ -79,24 +93,32 @@ namespace SharpeAcademia.Controllers
                 String json = client.DownloadString("http://localhost:61822/api/ExercicioAPI/Listar");
 
                 listExercicios = JsonConvert.DeserializeObject<List<Exercicios>>(json);
-
-                //ViewBag.Professor =
-                //    new SelectList(_professorDAO.ListarTodos(),
-                //    "ProfessorId", "Nome");
             }
 
+        }
 
+        public IActionResult Remover(int id)
+        {
+            _treinoDAO.Remover(id);
+            return RedirectToAction("Index");
+        }
 
+        public IActionResult Alterar(int id)
+        {
+            return View
+                (_treinoDAO.BuscarPorId(id));
         }
 
         public void ListaBanco()
         {
             List<Exercicios> obj = new List<Exercicios>();
             obj.AddRange(_exercicioDAO.ListarTodos());
+
             if (obj.Count > 0)
             {
                 foreach (var itemApi in listExercicios)
                 {
+
                     if (!obj.Exists(x => x.NomeExercicio.Equals(itemApi.NomeExercicio)))
                     {
                         _exercicioDAO.Cadastrar(itemApi);

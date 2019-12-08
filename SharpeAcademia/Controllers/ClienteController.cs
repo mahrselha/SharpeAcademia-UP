@@ -94,16 +94,17 @@ namespace SharpeAcademia.Controllers
 
         public double getImc(double peso, double altura)
         {
-        
+            string stg;
             double imc = 0;
             using (var client = new WebClient())
             {
-                double teste = 1.59;
-                string url = "http://localhost:61822/api/IMC?peso=" + 59 + "&altura=" + teste;
+               
+                string url = "http://localhost:61822/api/IMC?peso=" + peso + "&altura=" + altura;
                 string json = client.DownloadString(url);
 
-                imc = Convert.ToDouble(new string(json.Where(char.IsDigit).ToArray()));
-
+                stg = new string(json.Where(char.IsDigit).ToArray());
+                Double.TryParse(stg, out imc);
+                
             }
             return imc;
         }
