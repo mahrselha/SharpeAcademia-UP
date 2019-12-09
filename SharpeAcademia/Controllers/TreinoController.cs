@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using Repository;
+using System.Data;
 
 namespace SharpeAcademia.Controllers
 {
@@ -20,57 +21,59 @@ namespace SharpeAcademia.Controllers
     {
 
         public static List<Exercicios> listExercicios = new List<Exercicios>();
+        public static List<Cliente> listCliente = new List<Cliente>();
+        public static List<Professor> listProfessor = new List<Professor>();
+        public static Treino treinolist = new Treino();
         private readonly ClienteDAO _clienteDAO;
         private readonly ProfessorDAO _professorDAO;
         private readonly TreinoDAO _treinoDAO;
         private readonly ExercicioDAO _exercicioDAO;
-        //private readonly IHostingEnvironment _hosting;
+        private readonly IHostingEnvironment _hosting;
         public TreinoController(ClienteDAO clienteDAO,
             ProfessorDAO professorDAO,
             TreinoDAO treinoDAO,
-            ExercicioDAO exercicioDAO
-        /*IHostingEnvironment hosting*/)
+            ExercicioDAO exercicioDAO,
+        IHostingEnvironment hosting)
         {
             _clienteDAO = clienteDAO;
             _treinoDAO = treinoDAO;
             _professorDAO = professorDAO;
             _exercicioDAO = exercicioDAO;
-            //_hosting = hosting;
+            _hosting = hosting;
         }
+        [HttpGet]
         public IActionResult Cadastrar()
         {
             ListaExercicio();
             ListaBanco();
-                       
-            ViewBag.Exercicios = _exercicioDAO.ListarTodos();
+
+            ViewBag.Exercicios = new SelectList(_exercicioDAO.ListarTodos(), "ExercicioId", "Nome");
             ViewBag.Cliente = new SelectList(_clienteDAO.ListarTodos(), "ClienteId", "Nome");
             ViewBag.Professor = new SelectList(_professorDAO.ListarTodos(), "ProfessorId", "Nome");
 
+            listExercicios = _exercicioDAO.ListarTodos();
+            listProfessor = _professorDAO.ListarTodos();
+            listCliente = _clienteDAO.ListarTodos();
+
+
             return View();
         }
+       
         [HttpPost]
-        public async Task<IActionResult> Cadastrar(Treino t, int drpCliente, 
-            int drpProfessor)
+        public IActionResult Cadastrar(Treino treinolist, int drpCliente, int drpProfessor,
+            int drpExercicios)
         {
-            Treino treino = new Treino();
+            
+                treinolist.Cliente = _clienteDAO.BuscarPorId(drpCliente);
+                treinolist.Professor = _professorDAO.BuscarPorId(drpProfessor);
+                treinolist.Exercicio = _exercicioDAO.BuscarPorId(drpExercicios);
 
-            List<Exercicios> listatreino = new List<Exercicios>();
-
-            foreach (Exercicios item in ViewBag.Exercicios)
-            {
-                if (item.Ckb == true)
+                if (_treinoDAO.Cadastrar(treinolist))
                 {
-                    listatreino.Add(item);
+                    return RedirectToAction("Index");
                 }
-            }
-            treino.Professor = t.Professor;
-            treino.Cliente = t.Cliente;
-            treino.NomeExercicio = listatreino;
-
-            _treinoDAO.Cadastrar(treino);
-                      
-
-            return View();
+               
+            return View(treinolist);
         }
 
 
@@ -119,7 +122,7 @@ namespace SharpeAcademia.Controllers
                 foreach (var itemApi in listExercicios)
                 {
 
-                    if (!obj.Exists(x => x.NomeExercicio.Equals(itemApi.NomeExercicio)))
+                    if (!obj.Exists(x => x.Nome.Equals(itemApi.Nome)))
                     {
                         _exercicioDAO.Cadastrar(itemApi);
                     }

@@ -20,10 +20,15 @@ namespace Repository
             return _context.Treinos.ToList();
         }
         public bool Cadastrar(Treino treino) {
+
+            Treino aux = _context.Treinos
+                .FirstOrDefault(x => x.Cliente.ClienteId == treino.Cliente.ClienteId);
             
-                _context.Treinos.Add(treino);
-                _context.SaveChanges();
-                return true;
+            _context.Treinos.Add(treino);
+           
+            //_context.Treinos.Add(treino);
+            _context.SaveChanges();
+            return true;
         }
 
         public void Remover(int id)
@@ -31,11 +36,7 @@ namespace Repository
             _context.Treinos.Remove(BuscarPorId(id));
             _context.SaveChanges();
         }
-        public void Alterar(Treino p)
-        {
-            _context.Treinos.Update(p);
-            _context.SaveChanges();
-        }
+        
 
 
     }

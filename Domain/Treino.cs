@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 namespace Domain{
     [Table("Treino")]
     public class Treino {
+        public Treino() {
+            Exercicio = new Exercicios();
+            Cliente = new Cliente();
+            Professor = new Professor();
+            }
         [Key]
         public int TreinoId { get; set; }
-        public List<Exercicios> NomeExercicio { get; set; } 
+        public Exercicios Exercicio { get; set; } 
         public Cliente Cliente { get; set; }
         public Professor Professor { get; set; }
-        [NotMapped]
-        public bool CheckBox { get; set; }
+        
 
     } 
 }

@@ -12,7 +12,7 @@ namespace Repository {
             _context = context;
         }
         public Cliente BuscarPorId(int id) {
-            return _context.Clientes.Find(id);
+            return _context.Clientes.FirstOrDefault();
         }
         public List<Cliente> ListarTodos() {
             return _context.Clientes.ToList();

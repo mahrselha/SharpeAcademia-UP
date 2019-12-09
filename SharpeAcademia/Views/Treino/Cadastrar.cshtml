@@ -1,29 +1,43 @@
-﻿@model Domain.Treino
+﻿@model List<Treino>
 
 
-<form method="post">
+<form asp-controller="Treino" asp-action="Cadastrar" method="post">
     <fieldset>
         <legend>Treino</legend>
-        <div>
-
-            <div class="form-group" id="Cliente" >
-                <label>Cliente</label>
-                <select asp-items="@ViewBag.Cliente"
-                        class="form-control"
-                        name="drpCliente">
-                    <option> -- SELECIONE -- </option>
-                </select>
+        <div class="form-group" id="Cliente">
+            <label>Cliente</label>
+            <select asp-items="@ViewBag.Cliente"
+                    class="form-control"
+                    name="drpCliente">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+        <div class="form-group" id="Professor">
+            <label>Professor</label>
+            <select asp-items="@ViewBag.Professor"
+                    class="form-control"
+                    name="drpProfessor">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+        <div class="form-group" id="Exercicios">
+            <label>Exercicios</label>
+            <select asp-items="@ViewBag.Exercicios"
+                    class="form-control"
+                    name="drpExercicios">
+                <option> -- SELECIONE -- </option>
+            </select>
             </div>
-            <div class="form-group" id="Professor">
-                <label>Professor</label>
-                <select asp-items="@ViewBag.Professor"
-                        class="form-control"
-                        name="drpProfessor">
-                    <option> -- SELECIONE -- </option>
-                </select>
-            </div>
 
 
+
+            <input type="submit"
+                   class="btn btn-success"
+                   value="Cadastrar"
+                   asp-action="Cadastrar"
+                   asp-controller="Treino" />
+    </fieldset>
+    @*<div class="form-group" id="Exercicio" name="exercicioID">
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
@@ -33,25 +47,27 @@
 
                     </tr>
                 </thead>
+
                 <tbody>
-                    @foreach (Exercicios item in ViewBag.Exercicios)
+
+                    @foreach (Exercicios item in Model.NomeExercicio)
                     {
                         <tr>
+                            <td>@item.ExercicioId</td>
                             <td>@item.NomeExercicio</td>
                             <td>@item.Categoria</td>
                             <td><input type="checkbox">@item.Ckb</td>
-                        </tr>                    
+                        </tr>
                     }
-                    
+
                 </tbody>
+
             </table>
+
+        
         </div>
 
+        </div>*@
 
-            <input type="submit"
-                   class="btn btn-success"
-                   value="Cadastrar"
-                   asp-action="Cadastrar"
-                   asp-controller="Treino" />
-        </fieldset>
 </form>
+

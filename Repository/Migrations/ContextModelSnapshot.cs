@@ -60,13 +60,9 @@ namespace Repository.Migrations
 
                     b.Property<string>("Categoria");
 
-                    b.Property<string>("NomeExercicio");
-
-                    b.Property<int?>("TreinoId");
+                    b.Property<string>("Nome");
 
                     b.HasKey("ExercicioId");
-
-                    b.HasIndex("TreinoId");
 
                     b.ToTable("Exercicios");
                 });
@@ -104,11 +100,15 @@ namespace Repository.Migrations
 
                     b.Property<int?>("ClienteId");
 
+                    b.Property<int?>("ExercicioId");
+
                     b.Property<int?>("ProfessorId");
 
                     b.HasKey("TreinoId");
 
                     b.HasIndex("ClienteId");
+
+                    b.HasIndex("ExercicioId");
 
                     b.HasIndex("ProfessorId");
 
@@ -293,18 +293,15 @@ namespace Repository.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Domain.Exercicios", b =>
-                {
-                    b.HasOne("Domain.Treino")
-                        .WithMany("NomeExercicio")
-                        .HasForeignKey("TreinoId");
-                });
-
             modelBuilder.Entity("Domain.Treino", b =>
                 {
                     b.HasOne("Domain.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteId");
+
+                    b.HasOne("Domain.Exercicios", "Exercicio")
+                        .WithMany()
+                        .HasForeignKey("ExercicioId");
 
                     b.HasOne("Domain.Professor", "Professor")
                         .WithMany()
