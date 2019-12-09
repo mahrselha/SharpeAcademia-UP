@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace SharpeAcademia.Controllers
 {
@@ -25,14 +26,22 @@ namespace SharpeAcademia.Controllers
         }
         public IActionResult Index()
         {
-            return View(_clienteDAO.ListarTodos());
+
+            List<Cliente> cliente = new List<Cliente>();
+            WebClient client = new WebClient();
+            string json = client.DownloadString("http://localhost:61822/api/ClienteAPI/ListarTodos");
+            cliente = JsonConvert.DeserializeObject<List<Cliente>>(json);
+
+            return View(cliente);
+
+           
         }
 
         public IActionResult Cadastrar()
         {
             return View();
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> Cadastrar(Cliente u)
         {
@@ -75,18 +84,21 @@ namespace SharpeAcademia.Controllers
             }
         }
 
-        public IActionResult Remover(int id) {
+        public IActionResult Remover(int id)
+        {
             _clienteDAO.Remover(id);
             return RedirectToAction("Index");
         }
 
-        public IActionResult Alterar(int id) {
+        public IActionResult Alterar(int id)
+        {
             return View
                 (_clienteDAO.BuscarPorId(id));
         }
 
         [HttpPost]
-        public IActionResult Alterar(Cliente cliente) {
+        public IActionResult Alterar(Cliente cliente)
+        {
             _clienteDAO.Alterar(cliente);
             return RedirectToAction("Index");
         }
@@ -98,18 +110,18 @@ namespace SharpeAcademia.Controllers
             double imc = 0;
             using (var client = new WebClient())
             {
-               
+
                 string url = "http://localhost:61822/api/IMC?peso=" + peso + "&altura=" + altura;
                 string json = client.DownloadString(url);
 
                 stg = new string(json.Where(char.IsDigit).ToArray());
                 Double.TryParse(stg, out imc);
-                
+
             }
             return imc;
         }
     }
 
-        
-    
+
+
 }

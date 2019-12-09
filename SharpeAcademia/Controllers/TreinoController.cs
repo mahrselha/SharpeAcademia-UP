@@ -51,11 +51,11 @@ namespace SharpeAcademia.Controllers
             ViewBag.Cliente = new SelectList(_clienteDAO.ListarTodos(), "ClienteId", "Nome");
             ViewBag.Professor = new SelectList(_professorDAO.ListarTodos(), "ProfessorId", "Nome");
 
-            listExercicios = _exercicioDAO.ListarTodos();
-            listProfessor = _professorDAO.ListarTodos();
-            listCliente = _clienteDAO.ListarTodos();
+            //listExercicios = _exercicioDAO.ListarTodos();
+            //listProfessor = _professorDAO.ListarTodos();
+            //listCliente = _clienteDAO.ListarTodos();
 
-
+            
             return View();
         }
        
@@ -64,7 +64,8 @@ namespace SharpeAcademia.Controllers
             int drpExercicios)
         {
             
-                treinolist.Cliente = _clienteDAO.BuscarPorId(drpCliente);
+
+            treinolist.Cliente = _clienteDAO.BuscarPorId(drpCliente);
                 treinolist.Professor = _professorDAO.BuscarPorId(drpProfessor);
                 treinolist.Exercicio = _exercicioDAO.BuscarPorId(drpExercicios);
 
@@ -79,9 +80,11 @@ namespace SharpeAcademia.Controllers
 
         public IActionResult Index()
         {
-            if(_treinoDAO.ListarTodos() != null)
+
+            List<Treino> objTemp = _treinoDAO.BuscarTreino();
+            if (objTemp != null && objTemp.Count > 0 )
             {
-                return View(_treinoDAO.ListarTodos());
+                return View(objTemp);
             }
             return View(new List<Treino>());
 

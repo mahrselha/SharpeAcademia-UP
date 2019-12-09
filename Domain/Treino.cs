@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Domain{
-    [Table("Treino")]
+    [Table("Treinos")]
     public class Treino {
         public Treino() {
             Exercicio = new Exercicios();

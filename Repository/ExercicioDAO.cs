@@ -15,18 +15,18 @@ namespace Repository
         }
         public Exercicios BuscarPorId(int id)
         {
-            return _context.Exercicio.Find(id);
+            return _context.Exercicios.Find(id);
         }
 
         public List<Exercicios> ListarTodos()
         {
-            return _context.Exercicio.ToList();
+            return _context.Exercicios.ToList();
         }
 
         public bool Cadastrar(Exercicios exercicios)
         {
 
-            _context.Exercicio.Add(exercicios);
+            _context.Exercicios.Add(exercicios);
             _context.SaveChanges();
             return true;
 

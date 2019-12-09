@@ -67,17 +67,17 @@ using Domain;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(25, 2205, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e5b0a16e6d243118910ad80b224fa88", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f02e9eeea054beab9c4a41c58e55b2f", async() => {
                 BeginContext(92, 146, true);
                 WriteLiteral("\r\n    <fieldset>\r\n        <legend>Treino</legend>\r\n        <div class=\"form-group\" id=\"Cliente\">\r\n            <label>Cliente</label>\r\n            ");
                 EndContext();
                 BeginContext(238, 193, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f05e5ffe2c5941f3ac1930797a4dd958", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18d71432787f4472a05c04a2622d4cff", async() => {
                     BeginContext(356, 18, true);
                     WriteLiteral("\r\n                ");
                     EndContext();
                     BeginContext(374, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9866d12a91dc4fea86aeeee6952f6a48", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "119e1765a2ac4208a7bef8d46a847126", async() => {
                         BeginContext(382, 17, true);
                         WriteLiteral(" -- SELECIONE -- ");
                         EndContext();
@@ -121,12 +121,12 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.Cliente;
                 WriteLiteral("\r\n        </div>\r\n        <div class=\"form-group\" id=\"Professor\">\r\n            <label>Professor</label>\r\n            ");
                 EndContext();
                 BeginContext(548, 197, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e2eef96e2424b24857bf5990e17f69f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b92ba359d6a4d0b88333b300789ce51", async() => {
                     BeginContext(670, 18, true);
                     WriteLiteral("\r\n                ");
                     EndContext();
                     BeginContext(688, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7f8d69b54e0692445229b0588e4e", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f0735c2c1ae4e22922e817eb84c1d3d", async() => {
                         BeginContext(696, 17, true);
                         WriteLiteral(" -- SELECIONE -- ");
                         EndContext();
@@ -170,12 +170,12 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.Professor;
                 WriteLiteral("\r\n        </div>\r\n        <div class=\"form-group\" id=\"Exercicios\">\r\n            <label>Exercicios</label>\r\n            ");
                 EndContext();
                 BeginContext(864, 199, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f0b5d63f88a42d59de8d22c4d5d1440", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db55415bf1114f7e9430b476b0ea2ce1", async() => {
                     BeginContext(988, 18, true);
                     WriteLiteral("\r\n                ");
                     EndContext();
                     BeginContext(1006, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9fddf070ab640848117f0e2b91d15b3", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b9998aeedf44fbc87c65721e8c375bb", async() => {
                         BeginContext(1014, 17, true);
                         WriteLiteral(" -- SELECIONE -- ");
                         EndContext();
@@ -219,7 +219,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.Exercicios
                 WriteLiteral("\r\n            </div>\r\n\r\n\r\n\r\n            ");
                 EndContext();
                 BeginContext(1103, 192, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a7bf99ab4d7645eab9b48ae758185e7a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bd4431db6f974efcba10be322478b50b", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

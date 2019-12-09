@@ -11,7 +11,7 @@
            class="table table-hover table-striped">
         <thead>
             <tr class="table-active">
-                <th>TreinoID</th>
+               
                 <th>Nome Cliente</th>
                 <th>Professor</th>
                 <th>Exercicio</th>
@@ -22,13 +22,13 @@
         <tbody>
 
 
-            @foreach (var treino in Model)
+            @foreach (Treino treino in Model)
             {
                 <tr>
-                    <td> @treino.TreinoId</td>
-                    <td >@treino.Cliente</td>
-                    <td >@treino.Professor</td>
-                    <td >@treino.Exercicio</td>
+                    
+                    <td >@treino.Cliente.Nome</td>
+                    <td >@treino.Professor.Nome</td>
+                    <td >@treino.Exercicio.Nome</td>
                     <td>
                     <a asp-action="Remover"
                        asp-route-id="@treino.TreinoId"

@@ -89,7 +89,7 @@ namespace Repository.Migrations
 
                     b.HasKey("ProfessorId");
 
-                    b.ToTable("Professor");
+                    b.ToTable("Professores");
                 });
 
             modelBuilder.Entity("Domain.Treino", b =>
@@ -112,7 +112,7 @@ namespace Repository.Migrations
 
                     b.HasIndex("ProfessorId");
 
-                    b.ToTable("Treino");
+                    b.ToTable("Treinos");
                 });
 
             modelBuilder.Entity("Domain.Usuario", b =>

@@ -23,7 +23,6 @@ namespace Repository
 
             _context.Treinos.Add(treino);
            
-            //_context.Treinos.Add(treino);
             _context.SaveChanges();
             return true;
         }
@@ -33,8 +32,16 @@ namespace Repository
             _context.Treinos.Remove(BuscarPorId(id));
             _context.SaveChanges();
         }
-        
 
+        public List<Treino> BuscarTreino()
+        {
+            //return _context.Treinos.Include("Exercicios").
+            //    Include("Clientes").Include("Professores").ToList();
+
+            return _context.Treinos.
+                Include(x => x.Cliente).Include(x => x.Professor).Include(x => x.Exercicio).
+                ToList();
+        }
 
     }
 }

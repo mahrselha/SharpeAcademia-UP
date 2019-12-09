@@ -26,29 +26,24 @@ namespace API.Controllers
             //GET: /api/ProfessorAPI/ListarTodos
             [HttpGet]
             [Route("ListarTodos")]
-            public IActionResult ListarTodos()
+            public string ListarTodos()
             {
-                return Ok(_professorDAO.ListarTodos());
-            }
+                List<Professor> professores = _professorDAO.ListarTodos();
+                string lista = JsonConvert.SerializeObject(professores);
+
+                return lista;
+        }
             //GET:
             [HttpGet]
             [Route("BuscarPorId/{id}")]///{} parametros
-            public IActionResult BuscarPorId([FromRoute]int id)
+            public string BuscarPorId([FromRoute]int id)
             {
                 Professor e = _professorDAO.BuscarPorId(id);
-                if (e != null)
-                {
-                    return Ok(e);
-                }
-                return NotFound(new { msg = "Não encontrado" });
-            }
+            
+                string lista = JsonConvert.SerializeObject(e);
 
-            [HttpPost]
-            [Route("Cadastrar")]
-            public IActionResult Cadastrar([FromBody] Professor professor)
-            {
-                _professorDAO.Cadastrar(professor);
-                return Created("", professor);
-            }
+                return lista;
+        }
+
         }
     }

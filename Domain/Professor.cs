@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Domain {
-    [Table("Professor")]
+    [Table("Professores")]
     public class Professor {
 
         [Key]
