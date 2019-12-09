@@ -21,9 +21,6 @@ namespace Repository
         }
         public bool Cadastrar(Treino treino) {
 
-            Treino aux = _context.Treinos
-                .FirstOrDefault(x => x.Cliente.ClienteId == treino.Cliente.ClienteId);
-            
             _context.Treinos.Add(treino);
            
             //_context.Treinos.Add(treino);
